@@ -1,0 +1,15 @@
+{
+  "name": "@prospect-cockpit/web",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "node -e \"console.log('Web runtime lands after concept approval')\"",
+    "build": "node -e \"console.log('Web foundation ready')\"",
+    "start": "node -e \"console.log('Web runtime not implemented in Milestone 1')\"",
+    "lint": "eslint .",
+    "test": "node --test"
+  }
+}
