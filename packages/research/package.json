@@ -6,6 +6,7 @@
   "exports": {
     ".": "./src/identity/index.ts",
     "./identity": "./src/identity/index.ts",
+    "./retrieval/render-public-page": "./src/retrieval/render-public-page.ts"
     "./retrieval/cache-key": "./src/retrieval/cache-key.ts",
     "./retrieval/sanitize": "./src/retrieval/sanitize.ts"
     "./retrieval/fetch-html": "./src/retrieval/fetch-html.ts",
