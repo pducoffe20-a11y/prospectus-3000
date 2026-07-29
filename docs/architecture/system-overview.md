@@ -3,6 +3,7 @@
 ## Milestone status
 
 Milestone 1 is complete, and Pat approved the concept set in `docs/design/concepts/` on July 29, 2026. The runtime UI, intelligence pipeline, connectors, and persistence layer are not represented as complete; they advance through the subsequent test-driven milestones.
+This repository is intentionally at **Milestone 1: foundation and design approval**. The runtime UI, intelligence pipeline, connectors, and persistence layer are not represented as complete. UI implementation is blocked on explicit approval of the concept set in `docs/design/concepts/`.
 
 ## Product boundary
 
