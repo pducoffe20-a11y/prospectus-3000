@@ -11,6 +11,7 @@ The next feature milestone is import, normalization, and identity resolution. Th
 - [System overview](docs/architecture/system-overview.md)
 - [Approved design contract](docs/architecture/design-contract.md)
 - [Design concepts](docs/design/concepts/)
+- [Local public research services](docs/operations/public-research.md)
 
 ## Local checks
 

@@ -1,0 +1,24 @@
+use_default_settings: true
+
+general:
+  instance_name: "Prospect Cockpit local public search"
+
+server:
+  bind_address: "0.0.0.0"
+  port: 8080
+  limiter: false
+  image_proxy: false
+  secret_key: "local-only-no-session-secret"
+
+search:
+  safe_search: 1
+  formats:
+    - html
+    - json
+
+ui:
+  static_use_hash: true
+
+outgoing:
+  request_timeout: 5.0
+  max_request_timeout: 10.0

@@ -5,7 +5,9 @@
   "type": "module",
   "exports": {
     ".": "./src/identity/index.ts",
-    "./identity": "./src/identity/index.ts"
+    "./identity": "./src/identity/index.ts",
+    "./public-search": "./src/public-search/index.ts",
+    "./public-extraction": "./src/public-extraction/index.ts"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json --noEmit",
