@@ -6,6 +6,8 @@
   "exports": {
     ".": "./src/identity/index.ts",
     "./identity": "./src/identity/index.ts",
+    "./retrieval/cache-key": "./src/retrieval/cache-key.ts",
+    "./retrieval/sanitize": "./src/retrieval/sanitize.ts"
     "./retrieval/fetch-html": "./src/retrieval/fetch-html.ts",
     "./retrieval/fetch-pdf": "./src/retrieval/fetch-pdf.ts"
     "./retrieval/safe-url": "./src/retrieval/safe-url.ts",
@@ -16,6 +18,8 @@
     "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
-    "@prospect-cockpit/connectors": "workspace:*"
+    "@prospect-cockpit/connectors": "workspace:*",
+    "domhandler": "^5.0.3",
+    "htmlparser2": "^10.1.0"
   }
 }
