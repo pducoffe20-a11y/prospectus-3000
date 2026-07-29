@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "claim-launch-october",
+      "claimType": "initiative_timing",
+      "claimText": "The new certificate launches in October 2026.",
+      "sourceId": "source-launch-page",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/certificate",
+      "sourceTitle": "New Certificate",
+      "publishedAt": "2026-07-01T00:00:00Z",
+      "contentHash": "hash-launch-october",
+      "confidence": 0.93
+    },
+    {
+      "id": "claim-launch-january",
+      "claimType": "initiative_timing",
+      "claimText": "Enrollment opens for a January 2027 certificate launch.",
+      "sourceId": "source-enrollment-faq",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/certificate/faq",
+      "sourceTitle": "Certificate Enrollment FAQ",
+      "publishedAt": "2026-07-03T00:00:00Z",
+      "contentHash": "hash-launch-january",
+      "confidence": 0.92
+    }
+  ],
+  "expected": {
+    "type": "initiative_timing",
+    "status": "unresolved",
+    "claimIds": ["claim-launch-january", "claim-launch-october"]
+  }
+}

@@ -23,6 +23,8 @@
     "test:e2e": "node --import tsx --test tests/e2e/*.test.ts"
   },
   "devDependencies": {
+    "@prospect-cockpit/reasoning": "workspace:*",
+    "@prospect-cockpit/research": "workspace:*",
     "@eslint/js": "^9.32.0",
     "@types/node": "^20.19.9",
     "exceljs": "^4.4.0",

@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "id": "claim-stale-profile-title",
+      "claimType": "current_role_title",
+      "claimText": "Morgan Diaz is Vice President of Education.",
+      "sourceId": "source-stale-profile",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/about/morgan-diaz",
+      "sourceTitle": "Morgan Diaz Profile",
+      "publishedAt": "2022-05-01T00:00:00Z",
+      "contentHash": "hash-stale-profile",
+      "freshness": "stale",
+      "confidence": 0.75
+    },
+    {
+      "id": "claim-current-announcement-title",
+      "claimType": "current_role_title",
+      "claimText": "Morgan Diaz has been appointed Chief Learning Officer.",
+      "sourceId": "source-current-announcement",
+      "sourceClass": "official_announcement",
+      "sourceUrl": "https://example.org/news/chief-learning-officer",
+      "sourceTitle": "Official Announcement: Chief Learning Officer Appointment",
+      "publishedAt": "2026-06-20T00:00:00Z",
+      "contentHash": "hash-current-announcement",
+      "freshness": "fresh",
+      "confidence": 0.97
+    }
+  ],
+  "expected": {
+    "conflictType": "current_role_title",
+    "resolution": {
+      "kind": "superseded",
+      "winnerClaimId": "claim-current-announcement-title",
+      "supersededClaimIds": ["claim-stale-profile-title"]
+    }
+  }
+}

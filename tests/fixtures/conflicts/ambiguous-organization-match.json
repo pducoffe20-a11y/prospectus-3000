@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "claim-org-national",
+      "claimType": "organization_identity",
+      "claimText": "The National Health Credentialing Association operates this program.",
+      "sourceId": "source-national-program",
+      "sourceClass": "official",
+      "sourceUrl": "https://national.example.org/program",
+      "sourceTitle": "National Program Catalog",
+      "publishedAt": "2026-05-01T00:00:00Z",
+      "contentHash": "hash-org-national",
+      "confidence": 0.85
+    },
+    {
+      "id": "claim-org-state",
+      "claimType": "organization_identity",
+      "claimText": "The Health Credentialing Association of Michigan operates this program.",
+      "sourceId": "source-state-program",
+      "sourceClass": "official",
+      "sourceUrl": "https://michigan.example.org/program",
+      "sourceTitle": "Michigan Program Catalog",
+      "publishedAt": "2026-05-02T00:00:00Z",
+      "contentHash": "hash-org-state",
+      "confidence": 0.84
+    }
+  ],
+  "expected": {
+    "type": "organization_identity",
+    "status": "unresolved",
+    "claimIds": ["claim-org-national", "claim-org-state"]
+  }
+}

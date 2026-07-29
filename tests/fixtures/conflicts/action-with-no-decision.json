@@ -1,0 +1,31 @@
+{
+  "facts": [
+    {
+      "id": "claim-program-growth",
+      "claimType": "program_status",
+      "claimText": "Applications for the credential program increased this year.",
+      "sourceId": "source-annual-report",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/annual-report",
+      "sourceTitle": "Annual Report",
+      "publishedAt": "2026-06-01T00:00:00Z",
+      "contentHash": "hash-program-growth",
+      "confidence": 0.93
+    }
+  ],
+  "steps": [
+    {
+      "id": "action-without-decision",
+      "type": "action",
+      "statement": "Contact the learning leader to propose a platform migration.",
+      "evidenceClaimIds": ["claim-program-growth"],
+      "counterEvidenceClaimIds": [],
+      "confidence": 0.55,
+      "assumptions": [
+        "Program growth may create operational pressure, but migration intent is unknown."
+      ],
+      "validationQuestion": "Is the current platform limiting program growth?"
+    }
+  ],
+  "expectedIssueCodes": ["action_without_decision"]
+}
