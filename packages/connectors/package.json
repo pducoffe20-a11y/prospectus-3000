@@ -8,6 +8,12 @@
     "./import": "./src/import/index.ts",
     "./input-records": "./src/input-records.ts",
     "./public-retrieval": "./src/public-retrieval.ts"
+    ".": "./src/index.ts",
+    "./import": "./src/import/index.ts",
+    "./registry": "./src/registry.ts",
+    "./source-adapter": "./src/source-adapter.ts",
+    "./source-request": "./src/source-request.ts",
+    "./source-result": "./src/source-result.ts"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json --noEmit",
