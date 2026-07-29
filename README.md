@@ -2,21 +2,26 @@
 
 Seller-side prospect intelligence for evidence-backed prioritization, research, and human-reviewed outreach preparation.
 
-## Current milestone
+## Foundation status
 
-Milestone 1 establishes the pnpm/TypeScript workspace, deployment topology, architecture overview, and six proposed desktop/mobile design concepts. The concepts are intentionally awaiting explicit approval before live UI implementation.
+Milestones 1 and 2 are merged. The repository now contains the pnpm/TypeScript workspace, the approved design contract, versioned Zod and JSON Schema contracts, external serializers, the initial PostgreSQL migration, transactional repositories, and foundation, contract, schema, integration, and end-to-end tests.
+
+The next feature milestone is import, normalization, and identity resolution. That behavior is not part of the current foundation.
 
 - [System overview](docs/architecture/system-overview.md)
-- [Proposed design contract and approval checkpoint](docs/architecture/design-contract.md)
+- [Approved design contract](docs/architecture/design-contract.md)
 - [Design concepts](docs/design/concepts/)
 
 ## Local checks
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
+pnpm format:check
 pnpm lint
 pnpm typecheck
 pnpm test
+pnpm test:integration
+pnpm test:e2e
 pnpm build
 ```
 
