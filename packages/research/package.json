@@ -5,7 +5,9 @@
   "type": "module",
   "exports": {
     ".": "./src/identity/index.ts",
-    "./identity": "./src/identity/index.ts"
+    "./identity": "./src/identity/index.ts",
+    "./retrieval/fetch-html": "./src/retrieval/fetch-html.ts",
+    "./retrieval/fetch-pdf": "./src/retrieval/fetch-pdf.ts"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json --noEmit",
