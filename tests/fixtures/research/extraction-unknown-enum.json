@@ -1,0 +1,17 @@
+{
+  "sourceDocumentId": "doc-1",
+  "sourceTitle": "Official page",
+  "sourceUrl": "https://example.org",
+  "sourceAuthority": "official",
+  "supportingExcerpt": "A cited excerpt.",
+  "retrievedAt": "2026-07-29T00:00:00Z",
+  "publishedAt": null,
+  "claimType": "invented_claim",
+  "claimText": "Unknown claim",
+  "confidence": 0.8,
+  "freshnessInput": {
+    "publicationDate": null
+  },
+  "affectedDimensions": ["fit"],
+  "outreachPermission": "allowed"
+}

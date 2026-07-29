@@ -1,0 +1,16 @@
+{
+  "sourceDocumentId": "doc-1",
+  "sourceTitle": "Official page",
+  "sourceUrl": "https://example.org",
+  "sourceAuthority": "official",
+  "retrievedAt": "2026-07-29T00:00:00Z",
+  "publishedAt": null,
+  "claimType": "organization_fit",
+  "claimText": "Good fit",
+  "confidence": 0.8,
+  "freshnessInput": {
+    "publicationDate": null
+  },
+  "affectedDimensions": ["fit"],
+  "outreachPermission": "allowed"
+}

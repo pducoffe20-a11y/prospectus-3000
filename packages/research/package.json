@@ -8,6 +8,9 @@
     "./identity": "./src/identity/index.ts",
     "./public-search": "./src/public-search/index.ts",
     "./public-extraction": "./src/public-extraction/index.ts",
+    "./planner": "./src/planner/index.ts",
+    "./extraction": "./src/extraction/index.ts",
+    "./freshness": "./src/freshness/classify.ts",
     "./retrieval": "./src/retrieval/index.ts",
     "./retrieval/render-public-page": "./src/retrieval/render-public-page.ts",
     "./retrieval/cache-key": "./src/retrieval/cache-key.ts",
@@ -24,6 +27,7 @@
   "dependencies": {
     "@prospect-cockpit/connectors": "workspace:*",
     "domhandler": "^5.0.3",
-    "htmlparser2": "^10.1.0"
+    "htmlparser2": "^10.1.0",
+    "zod": "^3.25.76"
   }
 }
