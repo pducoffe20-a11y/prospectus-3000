@@ -12,7 +12,7 @@
     "schema:generate": "tsx src/json-schema.ts"
   },
   "dependencies": {
-    "zod": "^3.25.76",
+    "zod": "^4.4.3",
     "zod-to-json-schema": "^3.24.6"
   }
 }

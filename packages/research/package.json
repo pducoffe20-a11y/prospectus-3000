@@ -28,6 +28,6 @@
     "@prospect-cockpit/connectors": "workspace:*",
     "domhandler": "^5.0.3",
     "htmlparser2": "^10.1.0",
-    "zod": "^3.25.76"
+    "zod": "^4.4.3"
   }
 }
