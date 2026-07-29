@@ -5,7 +5,9 @@
   "type": "module",
   "exports": {
     ".": "./src/import/index.ts",
-    "./import": "./src/import/index.ts"
+    "./import": "./src/import/index.ts",
+    "./public-web": "./src/public-web/index.ts",
+    "./public-search": "./src/public-search/index.ts"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json --noEmit",
