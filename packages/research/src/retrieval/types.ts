@@ -9,7 +9,7 @@ export type RetrievalDenialReason =
   | "unsupported_content_type"
   | "response_too_large";
 
-export type RetrievalResult =
+export type PublicPageRetrievalResult =
   | {
       status: "retrieved";
       requestedUrl: string;
@@ -50,6 +50,8 @@ export type SearchOutcome =
 
 export interface SearchProvider {
   search(query: string, signal?: AbortSignal): Promise<SearchResult[]>;
+}
+
 export type RetrievalKind = "html" | "pdf";
 
 export interface Clock {

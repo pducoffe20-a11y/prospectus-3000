@@ -1,9 +1,9 @@
 import type { LookupAddress } from "node:dns";
 import { lookup as dnsLookup } from "node:dns/promises";
 import { addressesArePublic, validatePublicUrl } from "./policy.js";
-import type { RetrievalResult } from "./types.js";
+import type { PublicPageRetrievalResult } from "./types.js";
 
-export interface RetrievalOptions {
+export interface PublicPageRetrievalOptions {
   fetch?: typeof globalThis.fetch;
   lookup?: (hostname: string) => Promise<LookupAddress[]>;
   maxBytes?: number;
@@ -48,8 +48,8 @@ async function boundedText(response: Response, maximum: number) {
  */
 export async function retrievePublicPage(
   requestedUrl: string,
-  options: RetrievalOptions = {},
-): Promise<RetrievalResult> {
+  options: PublicPageRetrievalOptions = {},
+): Promise<PublicPageRetrievalResult> {
   const fetcher = options.fetch ?? globalThis.fetch;
   const lookup =
     options.lookup ??

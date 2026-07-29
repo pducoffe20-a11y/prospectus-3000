@@ -4,14 +4,12 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/import/index.ts",
-    "./import": "./src/import/index.ts",
-    "./public-web": "./src/public-web/index.ts",
-    "./public-search": "./src/public-search/index.ts"
-    "./input-records": "./src/input-records.ts",
-    "./public-retrieval": "./src/public-retrieval.ts"
     ".": "./src/index.ts",
     "./import": "./src/import/index.ts",
+    "./input-records": "./src/input-records.ts",
+    "./public-retrieval": "./src/public-retrieval.ts",
+    "./public-search": "./src/public-search/index.ts",
+    "./public-web": "./src/public-web/index.ts",
     "./registry": "./src/registry.ts",
     "./source-adapter": "./src/source-adapter.ts",
     "./source-request": "./src/source-request.ts",
