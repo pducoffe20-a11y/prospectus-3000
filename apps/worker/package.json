@@ -1,0 +1,14 @@
+{
+  "name": "@prospect-cockpit/worker",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "node -e \"console.log('Worker foundation ready')\"",
+    "start": "node -e \"console.log('Worker runtime not implemented in Milestone 1')\"",
+    "lint": "eslint .",
+    "test": "node --test"
+  }
+}
