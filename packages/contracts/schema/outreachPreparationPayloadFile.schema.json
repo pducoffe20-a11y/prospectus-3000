@@ -1,0 +1,684 @@
+{
+  "$ref": "#/definitions/OutreachPreparationPayloadFile",
+  "definitions": {
+    "OutreachPreparationPayloadFile": {
+      "type": "object",
+      "properties": {
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_name": {
+          "type": "string"
+        },
+        "workflow_stage": {
+          "type": "string"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "prospect_id": {
+                "type": "string"
+              },
+              "full_name": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "organization": {
+                "type": "string"
+              },
+              "email": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "linkedin_url": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "category": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "work_now",
+                  "light_research",
+                  "suppress"
+                ]
+              },
+              "score_total": {
+                "type": "number"
+              },
+              "scores": {
+                "type": "object",
+                "properties": {
+                  "fit": {
+                    "type": "number"
+                  },
+                  "urgency": {
+                    "type": "number"
+                  },
+                  "persona": {
+                    "type": "number"
+                  },
+                  "evidence": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "fit",
+                  "urgency",
+                  "persona",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "tenure_months": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "provided_input_facts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "claim": {
+                      "type": "string"
+                    },
+                    "source_label": {
+                      "type": "string"
+                    },
+                    "source_url": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/definitions/OutreachPreparationPayloadFile/properties/records/items/properties/linkedin_url/anyOf/0"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "observed_at": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "confidence": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "claim",
+                    "source_label",
+                    "source_url",
+                    "observed_at",
+                    "confidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "public_research_facts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/OutreachPreparationPayloadFile/properties/records/items/properties/provided_input_facts/items"
+                }
+              },
+              "verified_facts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/OutreachPreparationPayloadFile/properties/records/items/properties/provided_input_facts/items"
+                }
+              },
+              "inferred_pains": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "statement": {
+                      "type": "string"
+                    },
+                    "evidence_claim_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "confidence": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "statement",
+                    "evidence_claim_ids",
+                    "confidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "inferred_angles": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/OutreachPreparationPayloadFile/properties/records/items/properties/inferred_pains/items"
+                }
+              },
+              "unknowns": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string"
+                    },
+                    "why_it_matters": {
+                      "type": "string"
+                    },
+                    "smallest_next_check": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "why_it_matters",
+                    "smallest_next_check"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "what_to_check_first": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "evidence_notes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "gap",
+                        "conflict",
+                        "freshness",
+                        "source"
+                      ]
+                    },
+                    "note": {
+                      "type": "string"
+                    },
+                    "evidence_claim_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "note",
+                    "evidence_claim_ids"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "matched_customer_story": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "story_id": {
+                        "type": "string"
+                      },
+                      "customer_name": {
+                        "type": "string"
+                      },
+                      "relevance": {
+                        "type": "string"
+                      },
+                      "proof_points": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "source_url": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/definitions/OutreachPreparationPayloadFile/properties/records/items/properties/linkedin_url/anyOf/0"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "story_id",
+                      "customer_name",
+                      "relevance",
+                      "proof_points",
+                      "confidence",
+                      "source_url"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "recommended_actions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "order": {
+                      "type": "integer",
+                      "exclusiveMinimum": 0
+                    },
+                    "action": {
+                      "type": "string"
+                    },
+                    "channel": {
+                      "type": "string",
+                      "enum": [
+                        "email",
+                        "linkedin",
+                        "call",
+                        "research",
+                        "internal"
+                      ]
+                    },
+                    "due_at": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "rationale": {
+                      "type": "string"
+                    },
+                    "evidence_claim_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "order",
+                    "action",
+                    "channel",
+                    "due_at",
+                    "rationale",
+                    "evidence_claim_ids"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "outreach_payload": {
+                "type": "object",
+                "properties": {
+                  "ready_to_draft": {
+                    "type": "boolean"
+                  },
+                  "draft_goal": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "recipient": {
+                    "type": "object",
+                    "properties": {
+                      "full_name": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "organization": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "format": "email"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "linkedin_url": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/definitions/OutreachPreparationPayloadFile/properties/records/items/properties/linkedin_url/anyOf/0"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "full_name",
+                      "title",
+                      "organization",
+                      "email",
+                      "linkedin_url"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "context": {
+                    "type": "object",
+                    "properties": {
+                      "verified_fact_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "permitted_inference_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "prohibited_claim_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "matched_customer_story_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "verified_fact_ids",
+                      "permitted_inference_ids",
+                      "prohibited_claim_ids",
+                      "matched_customer_story_id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "constraints": {
+                    "type": "object",
+                    "properties": {
+                      "voice_profile_version": {
+                        "type": "string"
+                      },
+                      "max_words": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      },
+                      "cta_style": {
+                        "type": "string",
+                        "enum": [
+                          "soft_question",
+                          "permission_based",
+                          "light_next_step"
+                        ]
+                      },
+                      "human_review_required": {
+                        "type": "boolean",
+                        "const": true
+                      }
+                    },
+                    "required": [
+                      "voice_profile_version",
+                      "max_words",
+                      "cta_style",
+                      "human_review_required"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "draft_inputs": {
+                    "type": "object",
+                    "properties": {
+                      "opening_fact_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "likely_pain": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "relevance_angle": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "proof_points": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "soft_cta": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "opening_fact_id",
+                      "likely_pain",
+                      "relevance_angle",
+                      "proof_points",
+                      "soft_cta"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "draft_outputs": {
+                    "type": "object",
+                    "properties": {
+                      "subject_line": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "email_body": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "linkedin_message": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "call_opener": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "follow_up": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "subject_line",
+                      "email_body",
+                      "linkedin_message",
+                      "call_opener",
+                      "follow_up"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "review": {
+                    "type": "object",
+                    "properties": {
+                      "review_status": {
+                        "type": "string",
+                        "enum": [
+                          "needs_review",
+                          "changes_requested",
+                          "approved_for_send_prep"
+                        ]
+                      },
+                      "reviewer_action": {
+                        "type": "string"
+                      },
+                      "review_flags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "fact_check_targets": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "revision_requests": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "changed_since_last_draft": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "review_status",
+                      "reviewer_action",
+                      "review_flags",
+                      "fact_check_targets",
+                      "revision_requests",
+                      "changed_since_last_draft"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "suppression_reason": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "ready_to_draft",
+                  "draft_goal",
+                  "recipient",
+                  "context",
+                  "constraints",
+                  "draft_inputs",
+                  "draft_outputs",
+                  "review",
+                  "suppression_reason"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "prospect_id",
+              "full_name",
+              "title",
+              "organization",
+              "email",
+              "linkedin_url",
+              "category",
+              "status",
+              "score_total",
+              "scores",
+              "tenure_months",
+              "provided_input_facts",
+              "public_research_facts",
+              "verified_facts",
+              "inferred_pains",
+              "inferred_angles",
+              "unknowns",
+              "what_to_check_first",
+              "evidence_notes",
+              "matched_customer_story",
+              "recommended_actions",
+              "outreach_payload"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "generated_at",
+        "source_name",
+        "workflow_stage",
+        "records"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,285 @@
+{
+  "$ref": "#/definitions/OutreachPayload",
+  "definitions": {
+    "OutreachPayload": {
+      "type": "object",
+      "properties": {
+        "readyToDraft": {
+          "type": "boolean"
+        },
+        "draftGoal": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recipient": {
+          "type": "object",
+          "properties": {
+            "fullName": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "string"
+            },
+            "email": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "email"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "linkedinUrl": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "fullName",
+            "title",
+            "organization",
+            "email",
+            "linkedinUrl"
+          ],
+          "additionalProperties": false
+        },
+        "context": {
+          "type": "object",
+          "properties": {
+            "verifiedFactIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "permittedInferenceIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "prohibitedClaimIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "matchedCustomerStoryId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "verifiedFactIds",
+            "permittedInferenceIds",
+            "prohibitedClaimIds",
+            "matchedCustomerStoryId"
+          ],
+          "additionalProperties": false
+        },
+        "constraints": {
+          "type": "object",
+          "properties": {
+            "voiceProfileVersion": {
+              "type": "string",
+              "minLength": 1
+            },
+            "maxWords": {
+              "type": "integer",
+              "exclusiveMinimum": 0
+            },
+            "ctaStyle": {
+              "type": "string",
+              "enum": [
+                "soft_question",
+                "permission_based",
+                "light_next_step"
+              ]
+            },
+            "humanReviewRequired": {
+              "type": "boolean",
+              "const": true
+            }
+          },
+          "required": [
+            "voiceProfileVersion",
+            "maxWords",
+            "ctaStyle",
+            "humanReviewRequired"
+          ],
+          "additionalProperties": false
+        },
+        "draftInputs": {
+          "type": "object",
+          "properties": {
+            "openingFactId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "likelyPain": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "relevanceAngle": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "proofPoints": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "softCta": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "openingFactId",
+            "likelyPain",
+            "relevanceAngle",
+            "proofPoints",
+            "softCta"
+          ],
+          "additionalProperties": false
+        },
+        "draftOutputs": {
+          "type": "object",
+          "properties": {
+            "subjectLine": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "emailBody": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "linkedinMessage": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "callOpener": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "followUp": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "subjectLine",
+            "emailBody",
+            "linkedinMessage",
+            "callOpener",
+            "followUp"
+          ],
+          "additionalProperties": false
+        },
+        "review": {
+          "type": "object",
+          "properties": {
+            "reviewStatus": {
+              "type": "string",
+              "enum": [
+                "needs_review",
+                "changes_requested",
+                "approved_for_send_prep"
+              ]
+            },
+            "reviewerAction": {
+              "type": "string"
+            },
+            "reviewFlags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "factCheckTargets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "revisionRequests": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "changedSinceLastDraft": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "reviewStatus",
+            "reviewerAction",
+            "reviewFlags",
+            "factCheckTargets",
+            "revisionRequests",
+            "changedSinceLastDraft"
+          ],
+          "additionalProperties": false
+        },
+        "suppressionReason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "readyToDraft",
+        "draftGoal",
+        "recipient",
+        "context",
+        "constraints",
+        "draftInputs",
+        "draftOutputs",
+        "review",
+        "suppressionReason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

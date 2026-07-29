@@ -1,0 +1,102 @@
+{
+  "$ref": "#/definitions/Scorecard",
+  "definitions": {
+    "Scorecard": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prospectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "policyVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "fit": {
+              "type": "number"
+            },
+            "urgency": {
+              "type": "number"
+            },
+            "persona": {
+              "type": "number"
+            },
+            "evidence": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "fit",
+            "urgency",
+            "persona",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "weightedTotal": {
+          "type": "number"
+        },
+        "constrainedTotal": {
+          "type": "number"
+        },
+        "capsApplied": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gatesPassed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gatesFailed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hardSuppressors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidenceClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "prospectId",
+        "policyVersion",
+        "dimensions",
+        "weightedTotal",
+        "constrainedTotal",
+        "capsApplied",
+        "gatesPassed",
+        "gatesFailed",
+        "hardSuppressors",
+        "evidenceClaimIds",
+        "generatedAt"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

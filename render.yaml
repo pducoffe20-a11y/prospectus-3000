@@ -1,0 +1,48 @@
+databases:
+  - name: prospect-cockpit-db
+    databaseName: prospect_cockpit
+    user: prospect_cockpit
+    plan: basic-256mb
+    ipAllowList: []
+
+services:
+  - type: web
+    name: prospect-cockpit-web
+    runtime: node
+    plan: starter
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @prospect-cockpit/web build
+    startCommand: pnpm --filter @prospect-cockpit/web start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20.20.2
+      - key: DATABASE_URL
+        fromDatabase:
+          name: prospect-cockpit-db
+          property: connectionString
+      - key: APP_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: APP_USER_EMAIL
+        sync: false
+
+  - type: worker
+    name: prospect-cockpit-worker
+    runtime: node
+    plan: starter
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @prospect-cockpit/worker build
+    startCommand: pnpm --filter @prospect-cockpit/worker start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.20.2
+      - key: DATABASE_URL
+        fromDatabase:
+          name: prospect-cockpit-db
+          property: connectionString
+      - key: PUBLIC_RESEARCH_USER_AGENT
+        value: ProspectIntelligenceCockpit/0.1
+      - key: PUBLIC_SEARCH_PROVIDER
+        sync: false
+      - key: PUBLIC_SEARCH_API_KEY
+        sync: false

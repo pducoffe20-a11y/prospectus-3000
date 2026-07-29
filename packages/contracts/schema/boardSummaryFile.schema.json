@@ -1,0 +1,63 @@
+{
+  "$ref": "#/definitions/BoardSummaryFile",
+  "definitions": {
+    "BoardSummaryFile": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "date_label": {
+          "type": "string"
+        },
+        "total_records": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "work_now_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "light_research_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "suppress_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "key_themes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "manager_readout": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "date_label",
+        "total_records",
+        "work_now_count",
+        "light_research_count",
+        "suppress_count",
+        "key_themes",
+        "evidence_gaps",
+        "manager_readout"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
