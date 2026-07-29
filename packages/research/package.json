@@ -1,0 +1,17 @@
+{
+  "name": "@prospect-cockpit/research",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/identity/index.ts",
+    "./identity": "./src/identity/index.ts"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json --noEmit",
+    "test": "tsx --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@prospect-cockpit/connectors": "workspace:*"
+  }
+}

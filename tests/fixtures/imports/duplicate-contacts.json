@@ -1,0 +1,14 @@
+[
+  {
+    "sourceId": "D-1",
+    "organization": "Acme",
+    "personName": "Jane Doe",
+    "email": "JANE@acme.com"
+  },
+  {
+    "sourceId": "D-2",
+    "organization": "Acme Inc.",
+    "personName": "Jane Doe",
+    "email": "jane@acme.com"
+  }
+]

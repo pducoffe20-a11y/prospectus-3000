@@ -1,0 +1,6 @@
+{
+  "records": [
+    { "sourceId": "J-1", "organization": "Json Corp", "email": null },
+    { "sourceId": "J-2", "organization": "", "contacts": [] }
+  ]
+}

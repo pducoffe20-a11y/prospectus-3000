@@ -1,0 +1,18 @@
+{
+  "sheets": [
+    {
+      "name": "Accounts",
+      "rows": [
+        ["sourceId", "organization", "date"],
+        ["X-1", "Acme", "2025-01-02"]
+      ]
+    },
+    {
+      "name": "Contacts",
+      "rows": [
+        ["sourceId", "personName", "email"],
+        ["X-2", "Jane Doe", "jane@acme.com"]
+      ]
+    }
+  ]
+}

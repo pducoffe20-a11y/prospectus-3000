@@ -1,0 +1,34 @@
+[
+  {
+    "sourceId": "C-1",
+    "organization": "Acme Inc.",
+    "domain": "https://www.acme.com/path",
+    "personName": " Jane   Doe ",
+    "email": "JANE@ACME.COM",
+    "title": " VP Sales "
+  },
+  {
+    "sourceId": "C-2",
+    "organization": "ACME Incorporated",
+    "domain": "acme.com",
+    "personName": "Jane Doe",
+    "email": "jane@acme.com"
+  },
+  {
+    "sourceId": "C-3",
+    "organization": "Global Systems",
+    "personName": "Alex Kim"
+  },
+  {
+    "sourceId": "C-4",
+    "organization": "Global System",
+    "personName": "Alex Kim"
+  },
+  {
+    "sourceId": "C-5",
+    "organization": "Unknown",
+    "email": null,
+    "title": null,
+    "domain": null
+  }
+]

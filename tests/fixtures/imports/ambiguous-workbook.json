@@ -1,0 +1,11 @@
+{
+  "sheets": [
+    {
+      "name": "Ambiguous",
+      "rows": [
+        ["sourceId", "email", "email"],
+        ["X-1", "jane@acme.com", "other@acme.com"]
+      ]
+    }
+  ]
+}
