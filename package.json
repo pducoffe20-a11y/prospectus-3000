@@ -8,24 +8,30 @@
     "pnpm": ">=10.0.0"
   },
   "scripts": {
+    "analyze:unused": "knip",
     "build": "pnpm -r build",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "dev": "pnpm --filter @prospect-cockpit/web dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "eslint . && pnpm format:check",
+    "lint": "pnpm lint:code && pnpm format:check",
+    "lint:code": "eslint . --max-warnings 0",
     "typecheck": "tsc --project tsconfig.base.json --noEmit",
-    "test": "tsx --test $(find apps packages tests -type f \\( -name '*.test.ts' -o -name '*.test.mjs' \\) | sort)",
-    "test:unit": "tsx --test $(find packages -type f -name '*.test.ts' | sort)",
-    "test:integration": "tsx --test tests/integration/*.test.ts",
-    "test:e2e": "tsx --test tests/e2e/*.test.ts"
+    "test": "node --import tsx --test $(find apps packages tests -type f \\( -name '*.test.ts' -o -name '*.test.mjs' \\) | sort)",
+    "test:unit": "node --import tsx --test $(find packages -type f -name '*.test.ts' | sort)",
+    "test:integration": "node --import tsx --test tests/integration/*.test.ts",
+    "test:e2e": "node --import tsx --test tests/e2e/*.test.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "@types/node": "^20.19.9",
     "exceljs": "^4.4.0",
     "eslint": "^9.32.0",
+    "eslint-plugin-jsonc": "^3.3.0",
+    "knip": "^6.29.0",
     "prettier": "^3.6.2",
     "tsx": "^4.20.3",
+    "typescript-eslint": "^8.65.0",
     "typescript": "^5.8.3"
   }
 }

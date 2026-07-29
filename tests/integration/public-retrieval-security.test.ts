@@ -2,6 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { readFile } from "node:fs/promises";
 import {
+  parseConnectorInputRecord,
+  PUBLIC_RETRIEVAL_OPERATION,
+  PublicRetrievalRegistry,
+  type PublicRetrievalAdapter,
+} from "../../packages/connectors/src/import/index.js";
+import {
   MAX_RESPONSE_BYTES,
   RetrievalError,
   assertLinkedInActionAllowed,
@@ -258,12 +264,7 @@ test("denies LinkedIn authentication, sessions, restricted scraping, bypass, and
       () => assertLinkedInActionAllowed(action),
       /denied.*user-supplied context/i,
     );
-import {
-  parseConnectorInputRecord,
-  PUBLIC_RETRIEVAL_OPERATION,
-  PublicRetrievalRegistry,
-  type PublicRetrievalAdapter,
-} from "../../packages/connectors/src/import/index.js";
+});
 
 const prohibitedLinkedInOperations = [
   "automated-login",

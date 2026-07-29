@@ -84,5 +84,3 @@ export function parseSafeUrl(input: string | URL): SafeUrlValidationResult {
     }),
   };
 }
-
-export const validateSafeUrl = parseSafeUrl;
