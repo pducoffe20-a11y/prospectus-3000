@@ -25,15 +25,15 @@
   "devDependencies": {
     "@prospect-cockpit/reasoning": "workspace:*",
     "@prospect-cockpit/research": "workspace:*",
-    "@eslint/js": "^9.32.0",
-    "@types/node": "^20.19.9",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.1.2",
     "exceljs": "^4.4.0",
-    "eslint": "^9.32.0",
+    "eslint": "^10.8.0",
     "eslint-plugin-jsonc": "^3.3.0",
     "knip": "^6.29.0",
     "prettier": "^3.6.2",
     "tsx": "^4.20.3",
     "typescript-eslint": "^8.65.0",
-    "typescript": "^5.8.3"
+    "typescript": "^7.0.2"
   }
 }
