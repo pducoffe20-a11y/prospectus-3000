@@ -20,7 +20,7 @@
     "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
-    "csv-parse": "^6.1.0",
+    "csv-parse": "^7.0.1",
     "exceljs": "^4.4.0",
     "zod": "^3.25.76"
   }
