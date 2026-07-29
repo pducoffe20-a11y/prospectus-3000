@@ -5,7 +5,9 @@
   "type": "module",
   "exports": {
     ".": "./src/identity/index.ts",
-    "./identity": "./src/identity/index.ts"
+    "./identity": "./src/identity/index.ts",
+    "./retrieval/safe-url": "./src/retrieval/safe-url.ts",
+    "./retrieval/ip-policy": "./src/retrieval/ip-policy.ts"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json --noEmit",
