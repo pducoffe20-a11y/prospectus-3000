@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "claim-platform-brightspace",
+      "claimType": "learning_platform",
+      "claimText": "The association delivers member learning in Brightspace.",
+      "sourceId": "source-learning-login",
+      "sourceClass": "official",
+      "sourceUrl": "https://learn.example.org/login",
+      "sourceTitle": "Member Learning Login",
+      "publishedAt": "2026-07-01T00:00:00Z",
+      "contentHash": "hash-platform-brightspace",
+      "confidence": 0.93
+    },
+    {
+      "id": "claim-platform-canvas",
+      "claimType": "learning_platform",
+      "claimText": "Members access the association's courses through Canvas.",
+      "sourceId": "source-member-guide",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/member-learning-guide",
+      "sourceTitle": "Member Learning Guide",
+      "publishedAt": "2026-06-20T00:00:00Z",
+      "contentHash": "hash-platform-canvas",
+      "confidence": 0.91
+    }
+  ],
+  "expected": {
+    "type": "learning_platform",
+    "status": "unresolved",
+    "claimIds": ["claim-platform-brightspace", "claim-platform-canvas"]
+  }
+}

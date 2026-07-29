@@ -1,0 +1,36 @@
+{
+  "claims": [
+    {
+      "id": "claim-role-directory",
+      "claimType": "current_role_title",
+      "claimText": "Jordan Lee — Chief Learning Officer",
+      "sourceId": "source-leadership-directory",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/leadership",
+      "sourceTitle": "Leadership Directory",
+      "publishedAt": "2026-06-01T00:00:00Z",
+      "contentHash": "hash-role-directory",
+      "confidence": 0.94
+    },
+    {
+      "id": "claim-role-board-minutes",
+      "claimType": "current_role_title",
+      "claimText": "Jordan Lee, Chief Learning Officer",
+      "sourceId": "source-board-minutes",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/board/minutes-2026-06",
+      "sourceTitle": "June Board Minutes",
+      "publishedAt": "2026-06-15T00:00:00Z",
+      "contentHash": "hash-role-board-minutes",
+      "confidence": 0.92
+    }
+  ],
+  "sourceContext": {
+    "lineage": []
+  },
+  "expected": {
+    "normalizedValue": "jordan lee chief learning officer",
+    "independent": true,
+    "corroboratingPairs": [["claim-role-board-minutes", "claim-role-directory"]]
+  }
+}

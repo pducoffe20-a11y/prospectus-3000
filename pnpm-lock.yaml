@@ -11,6 +11,12 @@ importers:
       '@eslint/js':
         specifier: ^9.32.0
         version: 9.39.5
+      '@prospect-cockpit/reasoning':
+        specifier: workspace:*
+        version: link:packages/reasoning
+      '@prospect-cockpit/research':
+        specifier: workspace:*
+        version: link:packages/research
       '@types/node':
         specifier: ^20.19.9
         version: 20.19.43
@@ -73,6 +79,12 @@ importers:
       '@types/pg':
         specifier: ^8.15.4
         version: 8.20.0
+
+  packages/reasoning:
+    dependencies:
+      '@prospect-cockpit/contracts':
+        specifier: workspace:*
+        version: link:../contracts
 
   packages/research:
     dependencies:

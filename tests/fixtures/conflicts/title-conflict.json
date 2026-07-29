@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "claim-title-vp",
+      "claimType": "current_role_title",
+      "claimText": "Avery Chen is Vice President of Learning.",
+      "sourceId": "source-leadership-page",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/leadership",
+      "sourceTitle": "Leadership",
+      "publishedAt": "2026-06-01T00:00:00Z",
+      "contentHash": "hash-title-vp",
+      "confidence": 0.92
+    },
+    {
+      "id": "claim-title-director",
+      "claimType": "current_role_title",
+      "claimText": "Avery Chen is Director of Professional Development.",
+      "sourceId": "source-conference-program",
+      "sourceClass": "official",
+      "sourceUrl": "https://conference.example.org/program",
+      "sourceTitle": "Annual Conference Program",
+      "publishedAt": "2026-06-05T00:00:00Z",
+      "contentHash": "hash-title-director",
+      "confidence": 0.9
+    }
+  ],
+  "expected": {
+    "type": "current_role_title",
+    "status": "unresolved",
+    "claimIds": ["claim-title-director", "claim-title-vp"]
+  }
+}

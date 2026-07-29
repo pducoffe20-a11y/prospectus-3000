@@ -1,0 +1,133 @@
+{
+  "previous": {
+    "id": "run-previous",
+    "createdAt": "2026-07-01T00:00:00Z",
+    "facts": [
+      {
+        "id": "claim-role-old",
+        "claimType": "current_role_title",
+        "claimText": "Morgan Diaz is Vice President of Education.",
+        "sourceId": "source-profile-old",
+        "sourceClass": "official",
+        "sourceUrl": "https://example.org/about/morgan-diaz",
+        "sourceTitle": "Morgan Diaz Profile",
+        "publishedAt": "2022-05-01T00:00:00Z",
+        "contentHash": "hash-role-old",
+        "freshness": "recent",
+        "state": "publicly_verified",
+        "confidence": 0.86
+      },
+      {
+        "id": "claim-program-removed",
+        "claimType": "program_status",
+        "claimText": "The legacy certificate accepts applications.",
+        "sourceId": "source-legacy-catalog",
+        "sourceClass": "official",
+        "sourceUrl": "https://example.org/legacy-certificate",
+        "sourceTitle": "Legacy Certificate",
+        "publishedAt": "2025-09-01T00:00:00Z",
+        "contentHash": "hash-program-removed",
+        "freshness": "recent",
+        "state": "publicly_verified",
+        "confidence": 0.88
+      },
+      {
+        "id": "claim-platform-unverified",
+        "claimType": "learning_platform",
+        "claimText": "The association may use Brightspace.",
+        "sourceId": "source-platform-aggregator",
+        "sourceClass": "aggregator",
+        "sourceUrl": "https://directory.example.net/association",
+        "sourceTitle": "Association Technology Directory",
+        "publishedAt": null,
+        "contentHash": "hash-platform-unverified",
+        "freshness": "unknown",
+        "state": "unknown",
+        "confidence": 0.4
+      }
+    ],
+    "steps": [
+      {
+        "id": "signal-role",
+        "type": "signal",
+        "statement": "Morgan Diaz appears to lead education.",
+        "evidenceClaimIds": ["claim-role-old"],
+        "counterEvidenceClaimIds": [],
+        "confidence": 0.78,
+        "assumptions": [],
+        "validationQuestion": "Is Morgan Diaz still Vice President of Education?"
+      }
+    ]
+  },
+  "current": {
+    "id": "run-current",
+    "createdAt": "2026-07-29T00:00:00Z",
+    "facts": [
+      {
+        "id": "claim-role-old",
+        "claimType": "current_role_title",
+        "claimText": "Morgan Diaz is Vice President of Education.",
+        "sourceId": "source-profile-old",
+        "sourceClass": "official",
+        "sourceUrl": "https://example.org/about/morgan-diaz",
+        "sourceTitle": "Morgan Diaz Profile",
+        "publishedAt": "2022-05-01T00:00:00Z",
+        "contentHash": "hash-role-old",
+        "freshness": "stale",
+        "state": "conflicted",
+        "confidence": 0.7
+      },
+      {
+        "id": "claim-role-new",
+        "claimType": "current_role_title",
+        "claimText": "Morgan Diaz has been appointed Chief Learning Officer.",
+        "sourceId": "source-current-announcement",
+        "sourceClass": "official",
+        "sourceUrl": "https://example.org/news/chief-learning-officer",
+        "sourceTitle": "Chief Learning Officer Appointment",
+        "publishedAt": "2026-06-20T00:00:00Z",
+        "contentHash": "hash-role-new",
+        "freshness": "fresh",
+        "state": "publicly_verified",
+        "confidence": 0.97
+      },
+      {
+        "id": "claim-platform-unverified",
+        "claimType": "learning_platform",
+        "claimText": "The association uses Brightspace.",
+        "sourceId": "source-platform-official",
+        "sourceClass": "official",
+        "sourceUrl": "https://learn.example.org",
+        "sourceTitle": "Member Learning",
+        "publishedAt": "2026-07-10T00:00:00Z",
+        "contentHash": "hash-platform-verified",
+        "freshness": "fresh",
+        "state": "publicly_verified",
+        "confidence": 0.94
+      }
+    ],
+    "steps": [
+      {
+        "id": "signal-role",
+        "type": "signal",
+        "statement": "Morgan Diaz is the newly appointed Chief Learning Officer.",
+        "evidenceClaimIds": ["claim-role-new"],
+        "counterEvidenceClaimIds": ["claim-role-old"],
+        "confidence": 0.92,
+        "assumptions": [],
+        "validationQuestion": "Has the leadership directory been updated?"
+      }
+    ]
+  },
+  "expected": {
+    "addedEvidenceClaimIds": ["claim-role-new"],
+    "removedEvidenceClaimIds": ["claim-program-removed"],
+    "staleEvidenceClaimIds": ["claim-role-old"],
+    "conflictedEvidenceClaimIds": ["claim-role-old"],
+    "newlyVerifiedEvidenceClaimIds": [
+      "claim-platform-unverified",
+      "claim-role-new"
+    ],
+    "changedReasoningStepIds": ["signal-role"]
+  }
+}

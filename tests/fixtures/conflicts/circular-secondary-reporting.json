@@ -1,0 +1,59 @@
+{
+  "claims": [
+    {
+      "id": "claim-original-announcement",
+      "claimType": "initiative_timing",
+      "claimText": "The credential program launches in October 2026.",
+      "sourceId": "source-original-announcement",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/news/program-launch",
+      "sourceTitle": "Program Launch Announcement",
+      "publishedAt": "2026-07-01T00:00:00Z",
+      "contentHash": "hash-original-announcement",
+      "confidence": 0.95
+    },
+    {
+      "id": "claim-trade-publication",
+      "claimType": "initiative_timing",
+      "claimText": "The credential program launches in October 2026.",
+      "sourceId": "source-trade-publication",
+      "sourceClass": "secondary",
+      "sourceUrl": "https://news.example.com/program-launch",
+      "sourceTitle": "Association Plans October Launch",
+      "publishedAt": "2026-07-02T00:00:00Z",
+      "contentHash": "hash-trade-publication",
+      "confidence": 0.78
+    },
+    {
+      "id": "claim-industry-blog",
+      "claimType": "initiative_timing",
+      "claimText": "The credential program launches in October 2026.",
+      "sourceId": "source-industry-blog",
+      "sourceClass": "secondary",
+      "sourceUrl": "https://blog.example.net/october-credential-launch",
+      "sourceTitle": "Credential Launch Roundup",
+      "publishedAt": "2026-07-03T00:00:00Z",
+      "contentHash": "hash-industry-blog",
+      "confidence": 0.7
+    }
+  ],
+  "sourceContext": {
+    "lineage": [
+      {
+        "sourceId": "source-trade-publication",
+        "citesSourceIds": ["source-original-announcement"]
+      },
+      {
+        "sourceId": "source-industry-blog",
+        "citesSourceIds": [
+          "source-trade-publication",
+          "source-original-announcement"
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "independentPairs": [],
+    "corroboratingPairs": []
+  }
+}

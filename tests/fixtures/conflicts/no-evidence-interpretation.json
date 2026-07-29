@@ -1,0 +1,16 @@
+{
+  "facts": [],
+  "steps": [
+    {
+      "id": "interpretation-unsupported",
+      "type": "interpretation",
+      "statement": "The prospect is replacing its learning platform this quarter.",
+      "evidenceClaimIds": [],
+      "counterEvidenceClaimIds": [],
+      "confidence": 0.8,
+      "assumptions": [],
+      "validationQuestion": null
+    }
+  ],
+  "expectedIssueCodes": ["unsupported_assertion"]
+}

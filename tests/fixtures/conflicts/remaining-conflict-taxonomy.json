@@ -1,0 +1,91 @@
+{
+  "scenarios": [
+    {
+      "type": "tenure_start_date",
+      "claims": [
+        {
+          "id": "claim-start-2022",
+          "claimType": "tenure_start_date",
+          "claimText": "Riley Shah joined the association in 2022.",
+          "sourceId": "source-bio",
+          "sourceClass": "official",
+          "sourceUrl": "https://example.org/bio",
+          "sourceTitle": "Executive Bio",
+          "publishedAt": "2026-05-01T00:00:00Z",
+          "contentHash": "hash-start-2022",
+          "confidence": 0.91
+        },
+        {
+          "id": "claim-start-2023",
+          "claimType": "tenure_start_date",
+          "claimText": "Riley Shah joined the association in 2023.",
+          "sourceId": "source-anniversary",
+          "sourceClass": "official",
+          "sourceUrl": "https://example.org/anniversary",
+          "sourceTitle": "Staff Anniversary",
+          "publishedAt": "2026-05-02T00:00:00Z",
+          "contentHash": "hash-start-2023",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "type": "program_status",
+      "claims": [
+        {
+          "id": "claim-program-active",
+          "claimType": "program_status",
+          "claimText": "The leadership certificate is accepting applications.",
+          "sourceId": "source-catalog",
+          "sourceClass": "official",
+          "sourceUrl": "https://example.org/catalog",
+          "sourceTitle": "Program Catalog",
+          "publishedAt": "2026-05-01T00:00:00Z",
+          "contentHash": "hash-program-active",
+          "confidence": 0.92
+        },
+        {
+          "id": "claim-program-paused",
+          "claimType": "program_status",
+          "claimText": "The leadership certificate is paused until further notice.",
+          "sourceId": "source-program-notice",
+          "sourceClass": "official",
+          "sourceUrl": "https://example.org/program-notice",
+          "sourceTitle": "Program Notice",
+          "publishedAt": "2026-05-02T00:00:00Z",
+          "contentHash": "hash-program-paused",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "type": "ownership_or_duplicate_seller_motion",
+      "claims": [
+        {
+          "id": "claim-owner-east",
+          "claimType": "ownership_or_duplicate_seller_motion",
+          "claimText": "The East team owns the active seller motion.",
+          "sourceId": "source-owner-east",
+          "sourceClass": "internal",
+          "sourceUrl": null,
+          "sourceTitle": "Account Ownership Record",
+          "publishedAt": "2026-07-20T00:00:00Z",
+          "contentHash": "hash-owner-east",
+          "confidence": 0.95
+        },
+        {
+          "id": "claim-owner-strategic",
+          "claimType": "ownership_or_duplicate_seller_motion",
+          "claimText": "The Strategic Accounts team owns the active seller motion.",
+          "sourceId": "source-owner-strategic",
+          "sourceClass": "internal",
+          "sourceUrl": null,
+          "sourceTitle": "Seller Motion Record",
+          "publishedAt": "2026-07-20T00:00:00Z",
+          "contentHash": "hash-owner-strategic",
+          "confidence": 0.95
+        }
+      ]
+    }
+  ]
+}

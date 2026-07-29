@@ -1,0 +1,40 @@
+{
+  "claims": [
+    {
+      "id": "claim-search-snippet",
+      "claimType": "learning_platform",
+      "claimText": "The association uses Brightspace for professional learning.",
+      "sourceId": "source-search-snippet",
+      "sourceClass": "search_snippet",
+      "sourceUrl": "https://search.example.com/result/123",
+      "sourceTitle": "Search result for association learning",
+      "publishedAt": null,
+      "contentHash": "hash-search-snippet",
+      "confidence": 0.45
+    },
+    {
+      "id": "claim-page-summarized",
+      "claimType": "learning_platform",
+      "claimText": "The association uses Brightspace for professional learning.",
+      "sourceId": "source-platform-page",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/learning/platform",
+      "sourceTitle": "Learning Platform",
+      "publishedAt": "2026-04-01T00:00:00Z",
+      "contentHash": "hash-platform-page",
+      "confidence": 0.91
+    }
+  ],
+  "sourceContext": {
+    "lineage": [
+      {
+        "sourceId": "source-search-snippet",
+        "summarizesSourceId": "source-platform-page"
+      }
+    ]
+  },
+  "expected": {
+    "independent": false,
+    "corroboratingPairs": []
+  }
+}

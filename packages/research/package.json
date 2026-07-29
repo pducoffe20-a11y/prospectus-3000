@@ -10,6 +10,7 @@
     "./public-extraction": "./src/public-extraction/index.ts",
     "./planner": "./src/planner/index.ts",
     "./extraction": "./src/extraction/index.ts",
+    "./reconciliation": "./src/reconciliation/index.ts",
     "./freshness": "./src/freshness/classify.ts",
     "./retrieval": "./src/retrieval/index.ts",
     "./retrieval/render-public-page": "./src/retrieval/render-public-page.ts",

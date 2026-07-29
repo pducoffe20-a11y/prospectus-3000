@@ -1,0 +1,100 @@
+{
+  "facts": [
+    {
+      "id": "claim-title-vp",
+      "claimType": "current_role_title",
+      "claimText": "Avery Chen is Vice President of Learning.",
+      "sourceId": "source-leadership-page",
+      "sourceClass": "official",
+      "sourceUrl": "https://example.org/leadership",
+      "sourceTitle": "Leadership",
+      "publishedAt": "2026-06-01T00:00:00Z",
+      "contentHash": "hash-title-vp-visible",
+      "confidence": 0.92,
+      "contradicts": ["claim-title-director"]
+    },
+    {
+      "id": "claim-title-director",
+      "claimType": "current_role_title",
+      "claimText": "Avery Chen is Director of Professional Development.",
+      "sourceId": "source-conference-program",
+      "sourceClass": "official",
+      "sourceUrl": "https://conference.example.org/program",
+      "sourceTitle": "Annual Conference Program",
+      "publishedAt": "2026-06-05T00:00:00Z",
+      "contentHash": "hash-title-director-visible",
+      "confidence": 0.9,
+      "contradicts": ["claim-title-vp"]
+    }
+  ],
+  "steps": [
+    {
+      "id": "signal-role-conflict",
+      "type": "signal",
+      "statement": "Two current official sources name different roles for Avery Chen.",
+      "evidenceClaimIds": ["claim-title-director", "claim-title-vp"],
+      "counterEvidenceClaimIds": [],
+      "confidence": 0.98,
+      "assumptions": [],
+      "validationQuestion": "Which role and responsibilities are current?"
+    },
+    {
+      "id": "interpretation-role-uncertain",
+      "type": "interpretation",
+      "statement": "Avery Chen may influence learning strategy, but current authority is unresolved.",
+      "evidenceClaimIds": ["claim-title-vp"],
+      "counterEvidenceClaimIds": ["claim-title-director"],
+      "confidence": 0.55,
+      "assumptions": [
+        "Both titles may reflect a recent transition or different role descriptions."
+      ],
+      "validationQuestion": "Which title and scope should be used for this account?"
+    },
+    {
+      "id": "commercial-meaning-verify-role",
+      "type": "commercial_meaning",
+      "statement": "Seller motion should pause role-specific personalization until ownership is verified.",
+      "evidenceClaimIds": ["claim-title-vp"],
+      "counterEvidenceClaimIds": ["claim-title-director"],
+      "confidence": 0.82,
+      "assumptions": [],
+      "validationQuestion": "Does Avery Chen own the learning platform decision?"
+    },
+    {
+      "id": "decision-validate-first",
+      "type": "decision",
+      "statement": "Validate Avery Chen's current role before selecting a stakeholder motion.",
+      "evidenceClaimIds": ["claim-title-director", "claim-title-vp"],
+      "counterEvidenceClaimIds": [],
+      "confidence": 0.94,
+      "assumptions": [],
+      "validationQuestion": "What is Avery Chen's current role and decision scope?"
+    },
+    {
+      "id": "action-check-current-role",
+      "type": "action",
+      "statement": "Check a current first-party staff record and ask the account owner to confirm Avery Chen's role.",
+      "evidenceClaimIds": ["claim-title-director", "claim-title-vp"],
+      "counterEvidenceClaimIds": [],
+      "confidence": 0.9,
+      "assumptions": [],
+      "validationQuestion": "Do the first-party record and account owner agree?"
+    },
+    {
+      "id": "expected-outcome-role-clarity",
+      "type": "expected_outcome",
+      "statement": "This may produce a verified stakeholder role or preserve the role as unknown.",
+      "evidenceClaimIds": ["claim-title-director", "claim-title-vp"],
+      "counterEvidenceClaimIds": [],
+      "confidence": 0.72,
+      "assumptions": [
+        "A current first-party record or account-owner context may be available."
+      ],
+      "validationQuestion": "Was the role verified, or must it remain unknown?"
+    }
+  ],
+  "expected": {
+    "valid": true,
+    "conflictClaimIds": ["claim-title-director", "claim-title-vp"]
+  }
+}
