@@ -1,0 +1,10 @@
+[
+  {
+    "sourceId": "M-1",
+    "organization": "Known",
+    "email": null,
+    "title": null,
+    "domain": null
+  },
+  { "sourceId": "M-2", "organization": "Unknown" }
+]
