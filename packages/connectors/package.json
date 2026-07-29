@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "exports": {
+    ".": "./src/import/index.ts",
+    "./import": "./src/import/index.ts",
+    "./input-records": "./src/input-records.ts",
+    "./public-retrieval": "./src/public-retrieval.ts"
     ".": "./src/index.ts",
     "./import": "./src/import/index.ts",
     "./registry": "./src/registry.ts",

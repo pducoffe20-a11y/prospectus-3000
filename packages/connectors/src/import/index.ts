@@ -3,6 +3,8 @@ export * from "./excel.js";
 export * from "./json.js";
 export * from "./errors.js";
 export * from "./types.js";
+export * from "../input-records.js";
+export * from "../public-retrieval.js";
 
 /** Neutralizes spreadsheet formula prefixes without altering the source value during import. */
 export function sanitizeExportCell<T>(value: T): T | string {
