@@ -22,6 +22,6 @@
   "dependencies": {
     "csv-parse": "^6.1.0",
     "exceljs": "^4.4.0",
-    "zod": "^3.25.76"
+    "zod": "^4.4.3"
   }
 }
