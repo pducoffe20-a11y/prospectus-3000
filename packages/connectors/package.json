@@ -6,6 +6,8 @@
   "exports": {
     ".": "./src/import/index.ts",
     "./import": "./src/import/index.ts",
+    "./public-web": "./src/public-web/index.ts",
+    "./public-search": "./src/public-search/index.ts"
     "./input-records": "./src/input-records.ts",
     "./public-retrieval": "./src/public-retrieval.ts"
     ".": "./src/index.ts",
