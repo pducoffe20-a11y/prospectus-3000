@@ -1,5 +1,6 @@
 # Prospect Intelligence Cockpit — proposed design contract
 
+> **Approval state: approved by Pat on July 29, 2026.** The six concepts and this design contract are the implementation baseline. Material visual changes require a documented design-contract update.
 > **Approval state: awaiting Pat's explicit approval.** These concepts are a review artifact, not implemented product UI. Approve them as-is or request changes before Task 10 begins.
 
 ## Concept review set
@@ -79,6 +80,9 @@ Tone rules: direct, seller-centered, short, and factual. Never use “AI-powered
 - Toasts use a polite live region; failures remain visible until dismissed.
 - Tables, tabs, drawers, copy actions, and status controls have complete keyboard paths.
 
+## Approval record
+
+Pat approved the complete concept set as proposed on July 29, 2026. Task 10 may use these concepts as its visual baseline after the contracts, evidence pipeline, scoring, and outreach milestones establish the product truth it must render.
 ## Approval checkpoint
 
 Before live UI implementation, record one of:

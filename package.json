@@ -14,6 +14,17 @@
     "format:check": "prettier --check .",
     "lint": "eslint . && pnpm format:check",
     "typecheck": "tsc --project tsconfig.base.json --noEmit",
+    "test": "tsx --test $(find apps packages tests -type f \\( -name '*.test.ts' -o -name '*.test.mjs' \\) | sort)",
+    "test:unit": "tsx --test $(find packages -type f -name '*.test.ts' | sort)",
+    "test:integration": "tsx --test tests/integration/*.test.ts",
+    "test:e2e": "tsx --test tests/e2e/*.test.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^20.19.9",
+    "eslint": "^9.32.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.3",
     "test": "node --test",
     "test:unit": "node --test",
     "test:integration": "node --test",

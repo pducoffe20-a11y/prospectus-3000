@@ -1,0 +1,75 @@
+{
+  "$ref": "#/definitions/ReasoningStep",
+  "definitions": {
+    "ReasoningStep": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "signal",
+            "interpretation",
+            "commercial_meaning",
+            "decision",
+            "action",
+            "expected_outcome"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "counterEvidenceClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validationQuestion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "statement",
+        "evidenceClaimIds",
+        "counterEvidenceClaimIds",
+        "confidence",
+        "assumptions",
+        "validationQuestion"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

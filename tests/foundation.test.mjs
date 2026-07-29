@@ -17,11 +17,14 @@ test("workspace foundation declares supported runtime and private packages", asy
   assert.equal(workerPackage.private, true);
 });
 
+test("design contract records explicit approval without overstating completion", async () => {
 test("design contract remains explicitly gated on approval", async () => {
   const contract = await readFile(
     "docs/architecture/design-contract.md",
     "utf8",
   );
+  assert.match(contract, /approved by Pat on July 29, 2026/i);
+  assert.match(contract, /Approval does not imply backend/i);
   assert.match(contract, /awaiting Pat's explicit approval/i);
   assert.match(contract, /mobile-work-now\.svg/);
   assert.match(contract, /offline-dashboard\.svg/);

@@ -1,0 +1,77 @@
+{
+  "$ref": "#/definitions/ProspectDecision",
+  "definitions": {
+    "ProspectDecision": {
+      "type": "object",
+      "properties": {
+        "prospectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "work_now",
+            "light_research",
+            "suppress"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scorecardId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supportingEvidenceClaimIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reviewFlags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "smallestNextResearchStep": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "changeConditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "prospectId",
+        "status",
+        "confidence",
+        "rationale",
+        "scorecardId",
+        "supportingEvidenceClaimIds",
+        "reviewFlags",
+        "smallestNextResearchStep",
+        "changeConditions"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

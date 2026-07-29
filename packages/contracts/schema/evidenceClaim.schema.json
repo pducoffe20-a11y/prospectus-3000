@@ -1,0 +1,167 @@
+{
+  "$ref": "#/definitions/EvidenceClaim",
+  "definitions": {
+    "EvidenceClaim": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accountId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contactId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "claimType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimText": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "provided",
+            "publicly_verified",
+            "inferred",
+            "unknown",
+            "conflicted"
+          ]
+        },
+        "sourceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceClass": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceUrl": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceTitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publishedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "retrievedAt": {
+          "$ref": "#/definitions/EvidenceClaim/properties/publishedAt/anyOf/0"
+        },
+        "supportingExcerpt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contentHash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "freshness": {
+          "type": "string",
+          "enum": [
+            "fresh",
+            "recent",
+            "stale",
+            "unknown"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "corroborates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contradicts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affectsScores": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "fit",
+              "urgency",
+              "persona",
+              "evidence"
+            ]
+          }
+        },
+        "outreachPermission": {
+          "type": "string",
+          "enum": [
+            "allowed",
+            "hypothesis_only",
+            "prohibited"
+          ]
+        },
+        "researchRunId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "accountId",
+        "contactId",
+        "claimType",
+        "claimText",
+        "state",
+        "sourceId",
+        "sourceClass",
+        "sourceUrl",
+        "sourceTitle",
+        "publishedAt",
+        "retrievedAt",
+        "supportingExcerpt",
+        "contentHash",
+        "freshness",
+        "confidence",
+        "corroborates",
+        "contradicts",
+        "affectsScores",
+        "outreachPermission",
+        "researchRunId"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

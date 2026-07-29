@@ -1,2 +1,3 @@
 pnpm-lock.yaml
 docs/design/concepts/*.svg
+packages/contracts/schema/*.json
