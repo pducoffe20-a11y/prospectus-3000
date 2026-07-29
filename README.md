@@ -11,6 +11,7 @@ Public retrieval permits bounded HTTP(S) text, HTML, and JSON from DNS-verified 
 - [System overview](docs/architecture/system-overview.md)
 - [Approved design contract](docs/architecture/design-contract.md)
 - [Design concepts](docs/design/concepts/)
+- [Local public research services](docs/operations/public-research.md)
 
 ## Local checks
 

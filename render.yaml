@@ -44,5 +44,7 @@ services:
         value: ProspectIntelligenceCockpit/0.1
       - key: PUBLIC_SEARCH_PROVIDER
         sync: false
-      - key: PUBLIC_SEARCH_API_KEY
+      - key: PUBLIC_SEARCH_BASE_URL
+        sync: false
+      - key: PUBLIC_EXTRACTION_WORKER_URL
         sync: false
