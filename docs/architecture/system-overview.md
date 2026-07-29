@@ -2,7 +2,7 @@
 
 ## Milestone status
 
-Milestones 1 and 2 are merged, and Pat approved the concept set in `docs/design/concepts/` on July 29, 2026. The workspace, contracts, serializers, initial database migration, and repositories form the current foundation. The runtime UI, intelligence pipeline, and connectors advance through subsequent test-driven milestones.
+Milestones 1 and 2 are merged, and Milestone 3 adds the compliant public-research retrieval boundary. Pat approved the concept set in `docs/design/concepts/` on July 29, 2026. The workspace, contracts, serializers, initial database migration, repositories, and safe retrieval primitives form the current foundation. The runtime UI and broader intelligence pipeline advance through subsequent test-driven milestones.
 
 ## Product boundary
 
@@ -48,3 +48,19 @@ Node.js 20 and pnpm 10 are the supported baseline. `render.yaml` declares one we
 4. Every decision, draft-specific claim, and change explanation remains traceable.
 5. Missing, stale, partial, blocked, and conflicted states remain explicit.
 6. Historical artifacts and feedback events are append-only and policy-versioned.
+
+## Public retrieval boundary
+
+The research package accepts only public HTTP(S) pages. It rejects embedded
+credentials, local hostnames, non-public IPv4 and IPv6 destinations, LinkedIn,
+unsupported content types, excessive redirects, and oversized responses. DNS is
+resolved before each request and every redirect is independently URL- and
+DNS-validated. Returned source bodies remain untrusted evidence and are never
+interpreted as pipeline instructions.
+
+Search is an optional discovery aid rather than a route around retrieval policy.
+Missing, malformed, or failing search providers produce an explicit unavailable
+result with no scraping fallback. Candidate search URLs are filtered through the
+same URL policy, and actual retrieval still performs DNS validation. LinkedIn
+URLs may be retained from seller imports for identity and user navigation, but
+the retrieval and search boundaries never fetch or discover LinkedIn content.

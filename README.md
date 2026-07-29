@@ -4,9 +4,9 @@ Seller-side prospect intelligence for evidence-backed prioritization, research, 
 
 ## Foundation status
 
-Milestones 1 and 2 are merged. The repository now contains the pnpm/TypeScript workspace, the approved design contract, versioned Zod and JSON Schema contracts, external serializers, the initial PostgreSQL migration, transactional repositories, and foundation, contract, schema, integration, and end-to-end tests.
+Milestones 1 through 3 are implemented. The repository now contains the pnpm/TypeScript workspace, the approved design contract, versioned Zod and JSON Schema contracts, external serializers, the initial PostgreSQL migration, transactional repositories, a compliant public-research retrieval boundary, and foundation, contract, schema, integration, and end-to-end tests.
 
-The next feature milestone is import, normalization, and identity resolution. That behavior is not part of the current foundation.
+Public retrieval permits bounded HTTP(S) text, HTML, and JSON from DNS-verified public hosts only. It does not retrieve LinkedIn, local or private network targets, or use scraping as a fallback when a search provider is unavailable.
 
 - [System overview](docs/architecture/system-overview.md)
 - [Approved design contract](docs/architecture/design-contract.md)

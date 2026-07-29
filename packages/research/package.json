@@ -8,12 +8,22 @@
     "./identity": "./src/identity/index.ts",
     "./public-search": "./src/public-search/index.ts",
     "./public-extraction": "./src/public-extraction/index.ts"
+    "./retrieval": "./src/retrieval/index.ts"
+    "./retrieval/render-public-page": "./src/retrieval/render-public-page.ts"
+    "./retrieval/cache-key": "./src/retrieval/cache-key.ts",
+    "./retrieval/sanitize": "./src/retrieval/sanitize.ts"
+    "./retrieval/fetch-html": "./src/retrieval/fetch-html.ts",
+    "./retrieval/fetch-pdf": "./src/retrieval/fetch-pdf.ts"
+    "./retrieval/safe-url": "./src/retrieval/safe-url.ts",
+    "./retrieval/ip-policy": "./src/retrieval/ip-policy.ts"
   },
   "scripts": {
     "build": "tsc --project tsconfig.json --noEmit",
     "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
-    "@prospect-cockpit/connectors": "workspace:*"
+    "@prospect-cockpit/connectors": "workspace:*",
+    "domhandler": "^5.0.3",
+    "htmlparser2": "^10.1.0"
   }
 }
